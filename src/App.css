@@ -1,0 +1,39 @@
+.header {
+    background-image: url("./asset/3.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 661px;
+    overflow-y: hidden !important;
+  
+}
+
+.bg-Body{
+    background-color: #020614;
+}
+
+@media (min-width: 768px) {
+   .imageSlider{
+      max-width: 80%;
+      height: 500px;
+  }
+}
+
+
+.fade-enter{
+    opacity: 0;
+ }
+ .fade-exit{
+    opacity: 1;
+ }
+ .fade-enter-active{
+    opacity: 1;
+ }
+ .fade-exit-active{
+    opacity: 0;
+ }
+ .fade-enter-active,
+ .fade-exit-active{
+    transition: opacity 500ms;
+ }
