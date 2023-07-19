@@ -1,19 +1,23 @@
 import React from "react";
+import '../App.css';
+import Logo2 from "../asset/Logo2.png";
 import Logo from "../asset/Logo.png";
+import pelota from "../asset/pelota.png";
+import balon from "../asset/balon.png";
 
 
 function Header() {
     return (
         <header className="bg-sky-950 text-white py-3 px-4">
-            <div className="container mx-auto md:flex md:justify-between items-center">
-                <img
-                    src={Logo}
-                    alt="Logo"
-                    width="80px"
-                />
+        <div className="container mx-auto md:flex md:justify-between items-center">
+          <img src={balon} alt="balon"
+           className="logo" 
+           width="100" /> 
+    
+                
                 <ul className="text-xl md:flex md:items-center">
                     <li className="md:ml-5 border-b md:border-0">
-                        <a className=" block no-underline hover:text-gray-500 cursor-pointer py-4 md:py-0">Deportes</a>
+                        <a className=" block no-underline hover:text-gray-500 cursor-pointer py-4 md:py-0">⚽Deportes</a>
                     </li>
                     <li className="md:ml-5 border-b md:border-0">
                         <a className="block no-underline hover:text-gray-500 cursor-pointer py-4 md:py-0">Casino</a>
