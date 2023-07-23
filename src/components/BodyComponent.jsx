@@ -1,7 +1,7 @@
 import React from "react";
 import ImagenLeon from "../asset/Leon.png";
 import Chivas from "../asset/Chivas.svg";
-import Leones from "../asset/leones.png";
+import Leones from "../asset/UDGlogo.webp";
 import America from "../asset/america.png";
 
 function BodyComponent() {

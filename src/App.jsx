@@ -1,22 +1,22 @@
-import { useState } from 'react'
-import Header from './components/Header'
-import Content from "./components/Content"
-import BodyComponent from './components/BodyComponent'
-import BodyConten from './components/BodyConten'
-import Footer from './components/Footer'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Index from "./components/Index";
+import LoginContent from "./components/Login";
+import Register from "./components/Register";
 
 
 function App() {
-
   return (
     <>
-    <Header />
-    <Content />
-    <BodyComponent />
-    <BodyConten />
-    <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />}></Route>
+          <Route path="/loginUser" element={<LoginContent />}></Route>
+          <Route path='/register' element={<Register />}></Route>
+
+        </Routes>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,11 +1,21 @@
 import React from "react";
 import Logo from "../asset/Logo.png";
+import { useNavigate } from "react-router-dom";
+
 
 
 function Header() {
+
+    const navigate = useNavigate()
+
+    const register =()=>{
+        navigate('/register')
+    }
+
+
     return (
         <header className="bg-sky-950 text-white py-3 px-4">
-            <div className="container mx-auto md:flex md:justify-between items-center">
+            <div className=" w-[1750px] mx-auto md:flex md:justify-between items-center">
                 <img
                     src={Logo}
                     alt="Logo"
@@ -41,7 +51,7 @@ function Header() {
                         <a className=" my-4 md:mx-0 block no-underline cursor-pointer bg-yellow-500 px-3 py-1 rounded">Acceder</a>
                     </li>
                     <li className="md:ml-5 border-b md:border-0">
-                        <a className=" py-4 md:py-0 block no-underline hover:text-gray-500 cursor-pointer">Registrate</a>
+                        <a className=" py-4 md:py-0 block no-underline hover:text-gray-500 cursor-pointer" onClick={register}>Registrate</a>
                     </li>
                 </ul>
             </div>

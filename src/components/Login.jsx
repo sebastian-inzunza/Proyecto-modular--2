@@ -2,32 +2,33 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 function Login() {
 
-    const [values, setValues] = useState({
-        email: '',
-        password: ''
+  const [values, setValues] = useState({
+    email: '',
+    password: ''
+})
+
+const navigate = useNavigate()
+
+axios.defaults.withCredentials = true
+const handleSubmit= (e)=>{
+    e.preventDefault()
+    axios.post('http://localhost:8081/login', values)
+    .then(res =>{
+        if (res.data.Status === 'Success'){
+            navigate('/')
+        }else{
+            alert(res.data.Message)
+        }
     })
+    .catch(err => console.log(err))
+}
 
-    const navigate = useNavigate()
-
-    axios.defaults.withCredentials = true
-    const handleSubmit= (e)=>{
-        e.preventDefault()
-        axios.post('http://localhost:8081/login', values)
-        .then(res =>{
-            if (res.data.Status === 'Success'){
-                navigate('/')
-            }else{
-                alert(res.data.Message)
-            }
-        })
-        .catch(err => console.log(err))
-    }
-
-    return (
-        <div>
-            <section className="bg-gray-50 dark:bg-gray-900">
+  return (
+    <div>
+       <section className="bg-gray-50 dark:bg-gray-900">
                 <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                     <a
                         href="#"
@@ -129,56 +130,8 @@ function Login() {
                     </div>
                 </div>
             </section>
-        </div>
-    );
+    </div>
+  )
 }
 
-export default Login;
-
-// import axios from 'axios';
-// import React, { useState } from 'react';
-
-// const Login = () => {
-//   const [name, setName] = useState('');
-//   const [age, setAge] = useState('');
-
-//   const handleInsertData = () => {
-//     Código para llamar a la función de inserción de datos en el backend
-//     Puedes usar fetch o axios para hacer la solicitud POST
-
-//     const data = {
-//       name: name,
-//       age: age
-//     };
-
-//     axios.post('http://localhost:8081/login', data)
-//     .then(response => {
-//       console.log(response.data); // Respuesta del backend
-//       location.reload(true)
-//     })
-//     .catch(error => {
-//       console.error(error);
-//     });
-// };
-
-//   return (
-//     <div>
-//       <input
-//         placeholder="Nombre"
-//         value={name}
-//         onChange={e => setName(e.target.value)}
-
-//       />
-//       <input
-//         placeholder="Edad"
-//         value={age}
-//         onChange={e => setAge(e.target.value)}
-
-//       />
-//       <button onClick={handleInsertData}>Insertar Datos</button>
-
-//     </div>
-//   );
-// };
-
-// export default Login
+export default Login
