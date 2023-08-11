@@ -103,7 +103,7 @@ function Prueba() {
           </div>
           <Card title={"Deportes"} deportes={deportes} />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 bg-slate-700">
           <Outlet />
         </div>
       </div>
