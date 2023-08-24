@@ -17,8 +17,11 @@ const handleSubmit= (e)=>{
     e.preventDefault()
     axios.post('http://localhost:8081/login', values)
     .then(res =>{
-        if (res.data.Status === 'Success'){
+        console.log(res.data)
+        if (res.data.Status === 'Success' && res.data.Level === 1 ){
             navigate('/')
+        }else if (res.data.Level === 9){
+            navigate('/hoal')
         }else{
             alert(res.data.Message)
         }

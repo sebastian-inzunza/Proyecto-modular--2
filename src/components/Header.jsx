@@ -23,8 +23,10 @@ function Header() {
       e.preventDefault()
       axios.post('http://localhost:8081/login', values)
       .then(res =>{
-          if (res.data.Status === 'Success'){
+          if (res.data.Status === 'Success'  && res.data.Level === 1){
               navigate('/apuestas')
+            }else if (res.data.Level === 9){
+              navigate('/Admin')
           }else{
               alert(res.data.Message)
           }
@@ -66,7 +68,7 @@ function Header() {
             <input
               className="my-4 md:mx-0 block shadow appearance-none border rounded w-full py-1 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="username"
-              type="text"
+              type="password"
               placeholder="Contraseña"
               onChange={(e) =>
                 setValues({ ...values, password: e.target.value })

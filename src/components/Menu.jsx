@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import Card from "./Card";
+import futbol from "../asset/gifs/football-soccer.gif"
+
 
 function Prueba() {
   const navigate = useNavigate();
+
+  const [show, setShow] = useState(true)
 
   const getCookieValue = (cookieName) => {
     const cookies = document.cookie.split("; ");
@@ -46,6 +50,10 @@ function Prueba() {
     navigate("/");
   };
 
+  const isShow =()=>{
+    setShow(false)
+  }
+
   return (
     <div>
       <div className="flex min-h-screen">
@@ -63,7 +71,7 @@ function Prueba() {
             </div>
        
               <div className="my-2 ml-2">
-                <Link to={"deportes/futbol"} className="text-lg font-bold text-gray-800 ">
+                <Link to={"deportes/futbol"} className="text-lg font-bold text-gray-800 " onClick={isShow}>
                   Futbol Local
                 </Link>
                 <hr className="border-t-2 border-gray-400 my-1" />
@@ -104,7 +112,14 @@ function Prueba() {
           <Card title={"Deportes"} deportes={deportes} />
         </div>
         <div className="flex-1 bg-slate-700">
-          <Outlet />
+          {show ? (
+            <div className="flex justify-center items-center h-screen overflow-hidden">
+          <img src={futbol} alt="" />
+
+          </div>
+          ):   <Outlet />}
+          
+        
         </div>
       </div>
     </div>

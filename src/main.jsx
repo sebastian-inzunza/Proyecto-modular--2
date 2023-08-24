@@ -12,11 +12,16 @@ import Futbol from "./components/deportes/Futbol.jsx";
 import Basketball from "./components/deportes/Basketball.jsx";
 import Tennis from "./components/deportes/Tennis.jsx";
 import Beisball from "./components/deportes/Beisball.jsx";
+import Admin from "./components/Admin.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Index />,
+  },
+  {
+    path: "/Admin",
+    element: <Admin />,
   },
   {
     path: "/loginUser",
@@ -27,7 +32,7 @@ const router = createBrowserRouter([
     element: <Register />,
   },
   {
-    path: "/apuestas", // Parent route
+    path: "/apuestas/", // Parent route
     element: <Menu />,
     children: [
       {
