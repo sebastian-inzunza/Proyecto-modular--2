@@ -13,8 +13,13 @@ import Basketball from "./components/deportes/Basketball.jsx";
 import Tennis from "./components/deportes/Tennis.jsx";
 import Beisball from "./components/deportes/Beisball.jsx";
 import Admin from "./components/Admin.jsx";
+import Socket from "./components/Socket.jsx";
 
 const router = createBrowserRouter([
+  {
+    path: "/Pruebaaaaa",
+    element: <Socket />,
+  },
   {
     path: "/",
     element: <Index />,
@@ -36,19 +41,19 @@ const router = createBrowserRouter([
     element: <Menu />,
     children: [
       {
-        path: "deportes/futbol", // This will be the default child route, combine with the parent path
+        path: "deportes/futbol", 
         element: <Futbol />,
       },
       {
-        path: "deportes/basketball", // Combine with the parent path, don't use a leading "/"
+        path: "deportes/basketball",
         element: <Basketball />,
       },
       {
-        path: "deportes/tennis", // Combine with the parent path, don't use a leading "/"
+        path: "deportes/tennis",
         element: <Tennis />,
       },
       {
-        path: "deportes/beisball", // Combine with the parent path, don't use a leading "/"
+        path: "deportes/beisball",
         element: <Beisball />,
       },
     ],

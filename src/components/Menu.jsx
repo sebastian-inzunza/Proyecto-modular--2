@@ -2,12 +2,23 @@ import React, { useState, useEffect } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import Card from "./Card";
 import futbol from "../asset/gifs/football-soccer.gif"
+import UserData from "./UserData";
+import Modal from './Modal'; // Asegúrate de importar el componente Modal
 
 
 function Prueba() {
   const navigate = useNavigate();
 
   const [show, setShow] = useState(true)
+
+
+
+
+
+
+
+
+
 
   const getCookieValue = (cookieName) => {
     const cookies = document.cookie.split("; ");
@@ -22,6 +33,8 @@ function Prueba() {
 
   useEffect(() => {
     const token = getCookieValue("token");
+
+
     if (token) {
     } else {
       navigate("/");
@@ -44,11 +57,6 @@ function Prueba() {
     "Voleibol",
   ];
 
-  const handleLogout = () => {
-    // Limpia la cookie que contiene el token
-    clearToken("token");
-    navigate("/");
-  };
 
   const isShow =()=>{
     setShow(false)
@@ -59,8 +67,9 @@ function Prueba() {
       <div className="flex min-h-screen">
         <div className="w-64 bg-gray-800 flex flex-col justify-start items-start ">
           <Card
-            text={" Actualmente no dispones de deportes favoritos. "}
-            title={"Favoritos"}
+            title={"Métodos de pago"}
+            button={"Agregar"}
+            
           />
 
           <div className="  bg-white shadow-md mx-2 rounded-md ">
@@ -113,10 +122,14 @@ function Prueba() {
         </div>
         <div className="flex-1 bg-slate-700">
           {show ? (
+            <>
+        <UserData />
+
             <div className="flex justify-center items-center h-screen overflow-hidden">
           <img src={futbol} alt="" />
 
           </div>
+          </>
           ):   <Outlet />}
           
         

@@ -6,6 +6,7 @@ function FileDragger() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [excelData, setExcelData] = useState(null);
 
+
   const handleDragOver = (event) => {
     event.preventDefault();
     setDragging(true);
@@ -30,9 +31,10 @@ function FileDragger() {
     setSelectedFile(file);
 
     processExcelFile(file);
+
   };
 
-  console.log("sdfsdff",excelData)
+
 
   const processExcelFile = (file) => {
     const reader = new FileReader();
@@ -46,6 +48,10 @@ function FileDragger() {
       const jsonData = XLSX.utils.sheet_to_json(firstSheet);
 
       setExcelData(jsonData);
+
+      const jsonArray = Object.values(jsonData)
+      console.log(jsonArray)
+      enviarDato(jsonArray[0])
     };
     reader.readAsArrayBuffer(file);
   };
