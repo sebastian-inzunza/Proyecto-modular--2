@@ -3,6 +3,7 @@ import React from "react";
 import futbol from "../asset/iconos/futbol.svg";
 
 function CardAPuestas({
+  id,
   title,
   icon,
   local,
@@ -19,6 +20,7 @@ function CardAPuestas({
 
   const seleccion = (value) => {
     const data = {
+      id: id,
       equiposeleccionado:
         value === 1 ? local : value === 2 ? visitante : empate,
         momioSeleccionado:  value === 1 ? momio : value === 2 ? momio_2 : momio_empate,

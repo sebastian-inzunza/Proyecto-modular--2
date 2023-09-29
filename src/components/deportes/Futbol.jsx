@@ -3,6 +3,7 @@ import CardAPuestas from "../CardAPuestas";
 import ApuestaComponent from "../ApuestaComponent";
 import UserData from "../UserData";
 import axios from "axios";
+import io from "socket.io-client";
 
 function Futbol() {
   const [eventos, setEventos] = useState([]); // Inicializa el estado con un array vacío
@@ -52,28 +53,58 @@ function Futbol() {
     });
   };
 
+  // useEffect(() => {
+  //   axios.get('http://localhost:8081/getEventos')
+  //   .then((response) => {
+  //     // Actualiza el estado de eventos con los datos recibidos
+  //     setEventos(response.data);
+  //   })
+  //   .catch((error) => {
+  //     console.error('Error al obtener eventos:', error);
+  //   });
+
+  // }, [])
 
   useEffect(() => {
-    axios.get('http://localhost:8081/getEventos')
-    .then((response) => {
-      // Actualiza el estado de eventos con los datos recibidos
-      setEventos(response.data);
-    })
-    .catch((error) => {
-      console.error('Error al obtener eventos:', error);
+    const socket = io("http://localhost:8081");
+
+    // Escuchar el evento "datos_actualizados" para obtener datos actualizados
+    socket.on("datos_actualizados", (resultados) => {
+      setEventos(resultados);
     });
 
-  }, [])
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
+
+  // Función para cargar los datos desde el servidor
+  const cargarDatos = async () => {
+    try {
+      const response = await fetch("http://localhost:8081/seleccionar-datos");
+      const data = await response.json();
+      setEventos(data);
+    } catch (error) {
+      console.error("Error al cargar los datos:", error);
+    }
+  };
+
+
+  // Cargar los datos automáticamente al cargar el componente
+  useEffect(() => {
+    cargarDatos();
+  }, []);
 
   return (
     <div className="flex">
       <div className="w-5/6 space-y-4">
-       <UserData />
+        <UserData />
         {eventos.map((partido, index) => (
           <div key={index}>
             <CardAPuestas
+            id={partido.eventId}
               title={partido.eventName}
-              icon={Math.floor(Math.random() * 9) + 1}
+              icon={partido.icon}
               local={partido.nombreLocal}
               momio={partido.oddsLocalTeam}
               empate={"Empate"}

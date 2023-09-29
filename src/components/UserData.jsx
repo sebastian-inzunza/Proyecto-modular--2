@@ -17,14 +17,16 @@ function UserData(props) {
   const [mensajeM, setMensajeM] = useState("");
   const [deposito, setDeposito] = useState("");
 
-
-
   const [saldo, setSaldo] = useState(null); // Inicializa el saldo como nulo
 
   useEffect(() => {
+
+    const data = {
+      idUser : id
+    }
     // Realiza una solicitud GET al servidor para obtener el saldo del usuario
     axios
-      .get(`http://localhost:8081/saldoUsuario/${id}`)
+      .post(`http://localhost:8081/saldoUsuario`, data)
       .then((response) => {
         const saldoUsuario = response.data.saldo;
         setSaldo(saldoUsuario);

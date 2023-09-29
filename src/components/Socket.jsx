@@ -12,14 +12,8 @@ function Socket() {
       setDatos(resultados);
     });
 
-    // Configurar una actualización automática cada 10 segundos (ajusta el intervalo según tus necesidades)
-    const actualizarAutomaticamente = setInterval(() => {
-      cargarDatos();
-    }, 5000); // Actualiza cada 10 segundos
-
     return () => {
       socket.disconnect();
-      clearInterval(actualizarAutomaticamente); // Limpia el intervalo cuando el componente se desmonta
     };
   }, []);
 
