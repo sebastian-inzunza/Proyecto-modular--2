@@ -4,6 +4,7 @@ import Card from "./Card";
 import futbol from "../asset/gifs/football-soccer.gif"
 import UserData from "./UserData";
 import Modal from './Modal'; // Asegúrate de importar el componente Modal
+import MenuComponent from "./Layouts/MenuComponent";
 
 
 function Prueba() {
@@ -64,7 +65,9 @@ function Prueba() {
 
   return (
     <div>
-      <div className="flex min-h-screen">
+
+      <MenuComponent />
+      {/* <div className="flex min-h-screen">
         <div className="w-64 bg-gray-800 flex flex-col justify-start items-start ">
           <Card
             title={"Métodos de pago"}
@@ -104,19 +107,7 @@ function Prueba() {
                 <hr className="border-t-2 border-gray-400 my-1" />
               </div>
 
-              {/* <br />
-              <a href="" className="text-lg font-bold text-gray-800 ">Basketball</a>
-              <hr className="border-t-2 border-gray-400 my-1" />
-
-              <br />
-              <a href="" className="text-lg font-bold text-gray-800 ">Beisboll</a>
-              <hr className="border-t-2 border-gray-400 my-1" />
-
-              <br />
-              <a href="" className="text-lg font-bold text-gray-800 ">Tennis</a>
-              <div className="mt-4"></div>
-              <hr className="border-t-2 border-gray-400 my-1" /> */}
-        
+            
           </div>
           <Card title={"Deportes"} deportes={deportes} />
         </div>
@@ -134,7 +125,7 @@ function Prueba() {
           
         
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

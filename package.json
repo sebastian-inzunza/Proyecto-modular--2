@@ -10,11 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
+    "antd": "^5.9.4",
     "axios": "^1.4.0",
     "crypto-js": "^4.1.1",
     "js-cookie": "^3.0.5",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
     "react-router-dom": "^6.14.1",
     "react-tooltip": "^5.18.1",
     "react-transition-group": "^4.4.5",

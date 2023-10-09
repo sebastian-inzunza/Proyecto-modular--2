@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import moment from 'moment';
 
 function ClockWithSeconds() {
-  const [currentTime, setCurrentTime] = useState(new Date());
+  const [horaActual, setHoraActual] = useState(moment().format('HH:mm:ss'));
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000);
+      setHoraActual(moment().format('HH:mm:ss'));
+    }, 1000); // Actualiza cada segundo (1000 ms)
 
     return () => {
-      clearInterval(interval);
+      clearInterval(interval); // Limpia el intervalo cuando el componente se desmonta
     };
   }, []);
 
-  const formattedTime = currentTime.toLocaleTimeString();
-
   return (
-    <div className="text-xl">
-      {formattedTime}
+    <div>
+      <p className='text-2xl text-white'>{horaActual}</p>
     </div>
   );
 }

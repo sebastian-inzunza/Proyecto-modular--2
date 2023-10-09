@@ -9,6 +9,10 @@
   
 }
 
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
 .bg-Body{
     background-color: #020614;
 }
@@ -76,4 +80,19 @@
  @keyframes spin {
    0% { transform: rotate(0deg); }
    100% { transform: rotate(360deg); }
+ }
+
+ .ant-layout-sider-trigger {
+   background-color: #272221 !important
+   /* Otros estilos si es necesario */
+ }
+
+
+ .ant-table-thead > tr > th {
+   background-color: rgba(41, 85, 173, 0.88);
+ }
+
+ .bebas-neue-font {
+   font-family: 'Bebas Neue', sans-serif;
+   /* Otros estilos opcionales */
  }
