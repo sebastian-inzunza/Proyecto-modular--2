@@ -18,7 +18,7 @@ function BodyConten() {
         <p className="text-center text-4xl text-gray-500 mb-6">Sin depósito</p>
         <div className="flex justify-center mb-4">
           <button className="bg-yellow-500 px-10 py-4 rounded-md uppercase font-semibold text-gray-900 hover:bg-yellow-700 hover:text-white transition duration-300">
-            Deposita aquí
+            Deposita aquí 
           </button>
         </div>
       </div>
