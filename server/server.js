@@ -508,6 +508,7 @@ app.post("/addFondos", (req, res) => {
   );
 });
 
+
 app.get("/seleccionar-datos", (req, res) => {
   // Ejecuta una consulta SQL para seleccionar todos los datos de la tabla
   db.query("SELECT * FROM events", (error, resultados) => {
