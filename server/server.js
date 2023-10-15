@@ -171,6 +171,13 @@ const socketIO = require("socket.io");
 const bcrypt = require("bcrypt");
 
 const saltRounds = 10; // Cost factor for bcrypt (may vary)
+require('dotenv').config();
+
+const dbHost = process.env.DB_HOST;
+const passwrodDb = process.env.DB_PASSWORD
+const userDb = process.env.DB_USER
+const dabName  = process.env.DB_DATABASE
+const PORT = process.env.PORT
 
 const app = express();
 const server = http.createServer(app);
@@ -192,10 +199,10 @@ app.use(
 );
 
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "modular",
+  host: dbHost,
+  user: userDb,
+  password: passwrodDb,
+  database: dabName,
 });
 
 const verifyUser = (req, res, next) => {
@@ -579,6 +586,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(8081, () => {
+server.listen(PORT, () => {
   console.log("Servidor en ejecución en el puerto 8081");
 });

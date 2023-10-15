@@ -3,8 +3,7 @@ import Index from "./components/Index";
 import LoginContent from "./components/Login";
 import Register from "./components/Register";
 import Menu from "./components/Menu";
-
-
+import PageDeportes from "./components/pages/PageDeportes";
 
 function App() {
   return (
@@ -15,6 +14,7 @@ function App() {
           <Route path="/loginUser" element={<LoginContent />}></Route>
           <Route path='/register' element={<Register />}></Route>
           <Route path='/Data' element={<Menu />}></Route>
+          <Route path='/deportes' element={<PageDeportes />}></Route>
 
         </Routes>
       </BrowserRouter>

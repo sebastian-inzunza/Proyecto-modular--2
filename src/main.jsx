@@ -14,6 +14,7 @@ import Tennis from "./components/deportes/Tennis.jsx";
 import Beisball from "./components/deportes/Beisball.jsx";
 import Admin from "./components/Admin.jsx";
 import Socket from "./components/Socket.jsx";
+import PageDeportes from "./components/pages/PageDeportes.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: "/deportes",
+    element: <PageDeportes />,
   },
   {
     path: "/apuestas/", // Parent route

@@ -16,6 +16,9 @@ function Header() {
     navigate("/register");
   };
 
+  const deportes = () => {
+    navigate("/deportes");
+  };
   axios.defaults.withCredentials = true;
 
   const handleSubmit = (e) => {
@@ -40,15 +43,16 @@ function Header() {
   };
 
   return (
-    <header className="bg-sky-950 text-white py-3 px-4">
-      <div className="container mx-auto md:flex md:justify-between items-center">
-        <img src={Logo} alt="Logo" width="80px" />
+    <header className="bg-sky-950 bg-opacity-90 text-white py-3 px-4 md:fixed z-10 w-full flex items-center">
+        <img className="hidden md:block" src={Logo} alt="Logo" width="100px" />
 
-        <ul className="text-xl md:flex md:items-center space-y-2 md:space-y-0">
+      <div className="container mx-auto md:flex md:justify-between items-center">
+
+        <ul className="text-2xl md:flex md:items-center space-y-2 md:space-y-0">
           <li className="md:ml-5 border-b md:border-0">
             <a
               className="block no-underline hover:text-gray-500 cursor-pointer py-2 md:py-0"
-              href="#"
+              onClick={deportes}
             >
               Deportes
             </a>
@@ -58,9 +62,20 @@ function Header() {
               className="block no-underline hover:text-gray-500 py-2 md:py-0"
               href="#"
             >
-              Casino
+              Noticias
             </a>
           </li>
+          <li className="md:ml-5 border-b md:border-0">
+            <a
+              className="block no-underline hover:text-gray-500 py-2 md:py-0"
+              href="#"
+            >
+              Contacto
+            </a>
+          </li>
+        </ul>
+
+        <ul className="text-xl md:flex md:items-center space-y-2 md:space-y-0">
           <li className="md:ml-5">
             <input
               className="my-2 md:my-0 block w-full shadow appearance-none border rounded py-1 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -91,7 +106,7 @@ function Header() {
           </li>
           <li className="md:ml-5 border-b md:border-0">
             <a
-              className="block no-underline hover:text-gray-500 py-2 md:py-0 cursor-pointer"
+              className="block md:border no-underline hover:text-gray-500 py-2 md:py-2 md:px-3 rounded-sm cursor-pointer"
               onClick={register}
             >
               Regístrate

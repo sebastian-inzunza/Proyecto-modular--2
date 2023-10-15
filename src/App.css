@@ -96,3 +96,8 @@
    font-family: 'Bebas Neue', sans-serif;
    /* Otros estilos opcionales */
  }
+
+ .carousel-item img {
+  width: 100%; /* Establece el ancho al 100% para que todas las imágenes tengan el mismo ancho */
+  height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
+}
