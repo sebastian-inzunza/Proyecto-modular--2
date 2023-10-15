@@ -1,5 +1,7 @@
 import React from "react";
 import CountdownTimer from "./CountdownTimer";
+import atlas from "../asset/juego/atlas.svg";
+import maza from "../asset/juego/maza.webp";
 
 
 function PlayGame() {
@@ -17,7 +19,7 @@ function PlayGame() {
    
               <img
                 className=" w-32 md:w-[20rem]"
-                src="/public/atlas.svg"
+                src={atlas}
                 alt=""
               />
         
@@ -31,7 +33,7 @@ function PlayGame() {
           <div class="flex items-center justify-center border">
       
 
-            <img className="  w-32 md:w-[25em] " src="/public/maza.webp" alt="" />
+            <img className="  w-32 md:w-[25em] " src={maza} alt="" />
             
           </div>
         </div>

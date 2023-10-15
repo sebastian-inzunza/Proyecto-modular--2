@@ -1,5 +1,6 @@
 import React from "react";
-
+import Leon from "../asset/Leones.png";
+import leones from "../asset/fondo/leones.png";
 
 function Body() {
 
@@ -12,7 +13,7 @@ function Body() {
      
         <div className="w-full flex justify-center relative">
           <img
-            src="/public/fondo/leones.png"
+            src={leones}
             alt="Imagen 4"
             className="w-full max-w-full"
           />
@@ -39,7 +40,7 @@ function Body() {
                   <span className="text-3xl text-amber-500 font-bold mr-3">Bets Odds UDG</span>
                   <div className="w-1/6">
                     <button onClick={redirectToExternalURL}>
-                      <img  src="/public/Leones.png" alt="" />
+                      <img  src={Leon} alt="" />
                     </button>
                   </div>
                 </div>
