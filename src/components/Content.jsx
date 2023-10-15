@@ -1,6 +1,7 @@
 import React from "react";
 import Leon from "../asset/Leones.png";
 import leones from "../asset/fondo/leones.png";
+import "animate.css"
 
 function Body() {
 
@@ -17,8 +18,8 @@ function Body() {
             alt="Imagen 4"
             className="w-full max-w-full"
           />
-          <div className="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2        ">
-            <div class="block md:w-[65rem] rounded-lg  bg-sky-900 bg-opacity-90 text-left shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+          <div className="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+            <div class="block animate__animated animate__fadeInUpBig md:w-[65rem] rounded-lg  bg-sky-900 bg-opacity-90 text-left shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700  ">
               <div class="p-6">
                 <h5 class="mb-1 font-bold text-3xl text-center  leading-tight text-amber-500 ">
                   Todos los deportes, locales y participantes de la UDG y de

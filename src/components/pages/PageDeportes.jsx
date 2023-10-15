@@ -1,8 +1,9 @@
 import React from 'react'
+import Header from '../Header'
 
 function PageDeportes() {
   return (
-    <div>PageDeportes</div>
+    <Header />
   )
 }
 
