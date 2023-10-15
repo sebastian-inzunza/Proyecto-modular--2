@@ -1,5 +1,28 @@
 {
-    "rewrites":[
-        {"source": "/(.*)", "destination": "/"}
-    ]
+   "routes": [
+    {
+        "src": "/Pruebaaaaa",
+        "dest": "/"
+      },
+      {
+        "src": "/",
+        "dest": ""
+      },
+      {
+        "src": "/Admin",
+        "dest": "/"
+      },
+      {
+        "src": "/loginUser",
+        "dest": "/"
+      },
+      {
+        "src": "/register",
+        "dest": "/"
+      },
+      {
+        "src": "/deportes",
+        "dest": "/"
+      }
+   ]
 }
