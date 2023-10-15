@@ -1,6 +1,6 @@
 import React from "react";
 import CountdownTimer from "./CountdownTimer";
-import ScrollAnimation from 'react-animate-on-scroll';
+
 
 function PlayGame() {
   return (
@@ -14,13 +14,13 @@ function PlayGame() {
         </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
           <div class="flex items-center justify-center border">
-          <ScrollAnimation animateIn="animate__animated animate__fadeInLeftBig">
+   
               <img
                 className=" w-32 md:w-[20rem]"
                 src="/public/atlas.svg"
                 alt=""
               />
-            </ScrollAnimation>
+        
           </div>
           <div class="block my-auto items-center justify-center">
             <span className="text-4xl font-bold text-sky-900">Viernes 20</span>
@@ -29,10 +29,10 @@ function PlayGame() {
           </div>
 
           <div class="flex items-center justify-center border">
-          <ScrollAnimation animateIn="animate__animated animate__fadeInRightBig">
+      
 
             <img className="  w-32 md:w-[25em] " src="/public/maza.webp" alt="" />
-            </ScrollAnimation>
+            
           </div>
         </div>
       </div>

@@ -4,7 +4,6 @@ import { FaFutbol } from "react-icons/fa";
 import { RiBoxingLine } from "react-icons/ri";
 import { PiVolleyballLight } from "react-icons/pi";
 
-import "animate.css";
 
 import {
   DesktopOutlined,
@@ -120,7 +119,7 @@ const App = () => {
               <Button
                 type="primary"
                 onClick={handleMenuClick}
-                className="bg-white animate__animated animate__bounce"
+                className="bg-white"
                 shape="round"
                 icon={<BiUser className="text-black" />}
                 size="large"
