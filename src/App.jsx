@@ -8,16 +8,7 @@ import PageDeportes from "./components/pages/PageDeportes";
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />}></Route>
-          <Route path="/loginUser" element={<LoginContent />}></Route>
-          <Route path='/register' element={<Register />}></Route>
-          <Route path='/Data' element={<Menu />}></Route>
-          <Route path='/deportes' element={<PageDeportes />}></Route>
-
-        </Routes>
-      </BrowserRouter>
+   
     </>
   );
 }
