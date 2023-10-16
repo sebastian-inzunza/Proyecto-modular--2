@@ -3,6 +3,7 @@ import Logo from "../asset/Logo.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../../src/App.css";
+import Cookies from "js-cookie";
 
 function Header() {
   const navigate = useNavigate();
@@ -30,6 +31,12 @@ function Header() {
          .post("https://server-modular-production.up.railway.app/login", values)
         .then((res) => {
           if (res.data.Status === "Success" && res.data.Level === 1) {
+            Cookies.set("token", res.data.token)
+            Cookies.set("level", res.data.level)
+            Cookies.set("name", res.data.Name)
+            Cookies.set("balance", res.data.balance)
+            Cookies.set("id", res.data.id)
+
             navigate("/apuestas");
           } else if (res.data.Level === 9) {
             navigate("/Admin");
