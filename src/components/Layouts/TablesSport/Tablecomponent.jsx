@@ -47,8 +47,8 @@ const App = () => {
   const [eventos, setEventos] = useState([]); // Inicializa el estado con un array vacío
 
   useEffect(() => {
-    const socket = io("http://localhost:8081");
-
+    // const socket = io("http://localhost:8081");https://server-modular-production.up.railway.app/
+    const socket = io("https://server-modular-production.up.railway.app")
     // Escuchar el evento "datos_actualizados" para obtener datos actualizados
     socket.on("datos_actualizados", (resultados) => {
       setEventos(resultados);
@@ -62,7 +62,9 @@ const App = () => {
   // Función para cargar los datos desde el servidor
   const cargarDatos = async () => {
     try {
-      const response = await fetch("http://localhost:8081/seleccionar-datos");
+      // const response = await fetch("http://localhost:8081/seleccionar-datos");
+       const response = await fetch("https://server-modular-production.up.railway.app/seleccionar-datos");
+
       const data = await response.json();
       setEventos(data);
     } catch (error) {
