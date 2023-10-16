@@ -42,26 +42,26 @@ const router = createBrowserRouter([
     element: <PageDeportes />,
   },
   {
-    path: "/apuestas/", // Parent route
+    path: "/apuestas", // Parent route
     element: <Menu />,
-    children: [
-      {
-        path: "deportes/futbol", 
-        element: <Futbol />,
-      },
-      {
-        path: "deportes/basketball",
-        element: <Basketball />,
-      },
-      {
-        path: "deportes/tennis",
-        element: <Tennis />,
-      },
-      {
-        path: "deportes/beisball",
-        element: <Beisball />,
-      },
-    ],
+    // children: [
+    //   {
+    //     path: "deportes/futbol", 
+    //     element: <Futbol />,
+    //   },
+    //   {
+    //     path: "deportes/basketball",
+    //     element: <Basketball />,
+    //   },
+    //   {
+    //     path: "deportes/tennis",
+    //     element: <Tennis />,
+    //   },
+    //   {
+    //     path: "deportes/beisball",
+    //     element: <Beisball />,
+    //   },
+    // ],
   },
 ]);
 
