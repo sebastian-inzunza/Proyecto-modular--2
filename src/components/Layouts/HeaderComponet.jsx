@@ -118,7 +118,7 @@ const App = () => {
             >
               <Button
                 type="primary"
-                onClick={handleMenuClick}
+     
                 className="bg-white"
                 shape="round"
                 icon={<BiUser className="text-black" />}

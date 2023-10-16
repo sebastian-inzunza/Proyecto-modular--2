@@ -5,7 +5,7 @@ function Socket() {
   const [datos, setDatos] = useState([]);
 
   useEffect(() => {
-    const socket = io("http://localhost:8081");
+    const socket = io('http://localhost:8081');
 
     // Escuchar el evento "datos_actualizados" para obtener datos actualizados
     socket.on("datos_actualizados", (resultados) => {
