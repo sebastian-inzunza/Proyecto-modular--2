@@ -147,13 +147,16 @@ const App = () => {
 
 
   return (
-    <Table
+    <div className="md:block hidden">
+      <Table
       bordered
       columns={columns}
       className="mx-32"
       dataSource={data}
       size="small"
     />
+    </div>
+    
   );
 };
 
