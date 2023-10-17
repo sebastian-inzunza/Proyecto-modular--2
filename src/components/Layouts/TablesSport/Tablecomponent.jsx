@@ -109,6 +109,7 @@ const App = () => {
 
   useEffect(() => {
     const socket = io("http://localhost:8081");
+    
     // const socket = io("https://server-modular-production.up.railway.app")
     // Escuchar el evento "datos_actualizados" para obtener datos actualizados
     socket.on("datos_actualizados", (resultados) => {
