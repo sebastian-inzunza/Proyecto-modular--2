@@ -83,9 +83,11 @@ const App = () => {
       <Layout style={{ background: "#b2ada7" }}>
         <Header style={{ background: "#272221" }}>
           <div className="flex items-center justify-between h-full">
-            <div></div>
+            <div className="text-white text-lg"> <span>Saldo <span className="text-green-500">$1000</span></span></div>
             <div className="flex items-center">
               <ClockWithSeconds />
+
+             
             </div>
             <Dropdown menu={{ items }}>
               <Button
