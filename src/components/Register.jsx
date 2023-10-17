@@ -49,7 +49,7 @@ function Register() {
         };
   
         axios
-          .post("http://localhost:8081/registerUser", data)
+          .post("https://server-modular-production.up.railway.app/registerUser", data)
           // .post("https://server-modular-production.up.railway.app/registerUser", data)
           .then((response) => {
             console.log(response.data); // Respuesta del backend

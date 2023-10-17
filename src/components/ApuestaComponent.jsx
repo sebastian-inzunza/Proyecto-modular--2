@@ -19,7 +19,7 @@ function ApuestaComponent({ informacionRecibida }) {
       }
 
       axios
-  .post("http://localhost:8081/insertApuesta", data)
+  .post("https://server-modular-production.up.railway.app/insertApuesta", data)
   .then((response) => {
     Swal.fire({
       title: "Evento registrado",
