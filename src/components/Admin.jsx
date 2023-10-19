@@ -90,7 +90,7 @@ function Admin() {
 
     console.log(data);
     axios
-      .post("http://localhost:8081/insertEstadistica", data)
+      .post("https://server-modular-production.up.railway.app/insertEstadistica", data)
       .then((response) => {
         console.log(response.data); // Respuesta del backend
         if (response.status === 200) {
