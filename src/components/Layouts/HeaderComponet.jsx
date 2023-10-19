@@ -15,6 +15,7 @@ import {
 import { Breadcrumb, Layout, Menu, theme, Row, Col, Avatar, Dropdown, Button } from "antd";
 import ClockWithSeconds from "../ClockWithSeconds";
 import ContentComponent from "./ContentComponent";
+import DrawerComponent from "./DrawerComponent";
 const { Header, Content, Footer, Sider } = Layout;
 
 function getItem(label, key, icon, children) {
@@ -81,11 +82,19 @@ const App = () => {
         </Menu>
       </Sider>
       <Layout style={{ background: "#b2ada7" }}>
-        <Header style={{ background: "#272221" }}>
+        <Header style={{ background: "#272221" }} >
           <div className="flex items-center justify-between h-full">
+            <div className="lg:hidden block">
+            <DrawerComponent  />
+
+            </div>
+
             <div className="text-white text-lg"> <span>Saldo <span className="text-green-500">$1000</span></span></div>
             <div className="flex items-center">
+              <div className="hidden md:block">
               <ClockWithSeconds />
+
+              </div>
 
              
             </div>
