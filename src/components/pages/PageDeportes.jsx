@@ -17,18 +17,12 @@ import VoleyIcon from "../../asset/iconos Deportes/7.png";
 import GolfIcon from "../../asset/iconos Deportes/6.png";
 import NataIcon from "../../asset/iconos Deportes/5.png";
 import AtleIcon from "../../asset/iconos Deportes/4.png";
-import Facebook from "../../asset/redes/facebook.png";
-import Instagram from "../../asset/redes/instagram.png";
-import Twitter from "../../asset/redes/twitter.png";
-import Youtube from "../../asset/redes/youtube.png";
-import Tiktok from "../../asset/redes/tiktok.png";
-import Udeg from "../../asset/universidad/udeg.png";
-import Cucei from "../../asset/universidad/cucei.png";
-import Leonesnegros from "../../asset/universidad/leonesnegros.png";
+
 import Header from '../Header';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Importa los estilos CSS
 import "animate.css";
 import { Carousel } from 'react-responsive-carousel';
+import Footer from '../Footer';
 
 function PageDeportes() {
   const imageSizeStyle = {
@@ -283,67 +277,7 @@ function PageDeportes() {
       </Carousel>
     </div>
     <br /><br /><br /><br />
-    <div className="bg-gray-900 text-white py-12">
-      <div className="container mx-auto flex flex-wrap justify-between">
-        {/*Primera sección del Footer*/}
-        <div className="w-full md:w-1/4">
-          <h3 className="text-xl font-bold mb-4">Redes sociales</h3>
-          <div className="flex flex-wrap items-center">
-            <div className="w-1/2 md:w-full flex items-center py-2">
-            <a href="http://www.facebook.com">
-                <img src={Facebook} alt="Twitter" className="mr-2" />
-                <p>Bet Odds UdeG</p>
-              </a>
-            </div>
-            <div className="w-1/2 md:w-full flex items-center py-2">
-              <a href="http://www.twitter.com">
-                <img src={Twitter} alt="Twitter" className="mr-2" />
-                <p>@BetOddsUdeG</p>
-              </a>
-            </div>
-            <div className="w-1/2 md:w-full flex items-center py-2">
-            <a href="http://www.instagram.com">
-                <img src={Instagram} alt="Twitter" className="mr-2" />
-                <p>@BetOddsUdeG</p>
-              </a>
-            </div>
-            <div className="w-1/2 md:w-full flex items-center py-2">
-            <a href="http://www.tiktok.com">
-                <img src={Tiktok} alt="Twitter" className="mr-2" />
-                <p>@BetOddsUdeG</p>
-              </a>
-            </div>
-            <div className="w-1/2 md:w-full flex items-center py-2">
-            <a href="http://www.youtube.com">
-                <img src={Youtube} alt="Twitter" className="mr-2" />
-                <p>Bet Odds UdeG</p>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/*Segunda sección del Footer*/}
-        <div>
-          <p>® Sebastian Alonso | Jose Luis | Derechos reservados UDG</p>
-        </div>
-
-        {/*Tercera sección del Footer*/}
-        <div className="w-full md:w-1/4">
-          <h3 className="text-xl font-bold mb-4">Bet Odds UdeG</h3>
-          <div className="flex items-center">
-            <a href="https://www.udg.mx/">
-              <img src={Udeg} alt="UdeG" className="mr-2 mb-2 w-12 h-12 md:w-32 md:h-32" />
-            </a>
-            <a href="https://leonesnegrosudg.mx/">
-              <img src={Leonesnegros} alt="Leones Negros" className="mr-2 mb-2 w-12 h-12 md:w-32 md:h-32" />
-            </a>
-            <a href="http://www.cucei.udg.mx/">
-              <img src={Cucei} alt="CUCEI" className="mr-2 mb-2 w-12 h-12 md:w-32 md:h-32" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Footer />
   </div>
   );
 }
