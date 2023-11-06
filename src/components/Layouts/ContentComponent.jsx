@@ -45,7 +45,7 @@ const ContentComponent = ({ selectedMenuItem }) => {
           background: "white",
         }}
       >
-        <Tablecomponent tipo={tipo} titulo={selectedMenuItem} />
+        {/* <Tablecomponent tipo={tipo} titulo={selectedMenuItem} /> */}
       </div>
     </Content>
   );
