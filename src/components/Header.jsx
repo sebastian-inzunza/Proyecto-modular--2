@@ -20,6 +20,19 @@ function Header() {
   const deportes = () => {
     navigate("/deportes");
   };
+
+  const noticias = () => {
+    navigate("/noticias");
+  };
+
+  const contacto = () => {
+    navigate("/contacto");
+  }
+
+  const inicio = () => {
+    navigate("/");
+  };
+
   axios.defaults.withCredentials = true;
 
   const handleSubmit = (e) => {
@@ -27,8 +40,8 @@ function Header() {
       console.log("entre");
       e.preventDefault();
       axios
-        .post("http://localhost:8081/login", values)
-        //  .post("https://server-modular-production.up.railway.app/login", values)
+        // .post("http://localhost:8081/login", values)
+         .post("https://server-modular-production.up.railway.app/login", values)
         .then((res) => {
           if (res.data.Status === "Success" && res.data.Level === 1) {
             Cookies.set("token", res.data.token)
@@ -57,6 +70,14 @@ function Header() {
       <div className="container mx-auto md:flex md:justify-between items-center">
 
         <ul className="text-2xl md:flex md:items-center space-y-2 md:space-y-0">
+        <li className="md:ml-5 border-b md:border-0">
+            <a
+              className="block no-underline hover:text-gray-500 cursor-pointer py-2 md:py-0"
+              onClick={inicio}
+            >
+              Inicio
+            </a>
+          </li>
           <li className="md:ml-5 border-b md:border-0">
             <a
               className="block no-underline hover:text-gray-500 cursor-pointer py-2 md:py-0"
@@ -65,20 +86,13 @@ function Header() {
               Deportes
             </a>
           </li>
+
           <li className="md:ml-5 border-b md:border-0">
-            <a
-              className="block no-underline hover:text-gray-500 py-2 md:py-0"
-              href="#"
+          <a
+              className="block no-underline hover:text-gray-500 cursor-pointer py-2 md:py-0"
+              onClick={noticias}
             >
-              Noticias
-            </a>
-          </li>
-          <li className="md:ml-5 border-b md:border-0">
-            <a
-              className="block no-underline hover:text-gray-500 py-2 md:py-0"
-              href="#"
-            >
-              Contacto
+              Noticia
             </a>
           </li>
         </ul>
