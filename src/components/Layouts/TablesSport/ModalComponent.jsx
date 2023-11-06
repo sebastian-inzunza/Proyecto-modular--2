@@ -43,7 +43,7 @@ function ModalComponent({
 
   const getPayMethod = (id) => {
     axios
-      .get("http://localhost:8081/credits?id=" + id)
+      .get("https://server-modular-production.up.railway.app/credits?id=" + id)
       .then((res) => {
         if (res.status === 200) {
           setCredit(res.data.balance);
@@ -68,7 +68,7 @@ function ModalComponent({
       saldo: credit
     };
     axios
-    .post("http://localhost:8081/insertApuesta", data)
+    .post("https://server-modular-production.up.railway.app/insertApuesta", data)
     .then((response) => {
       const message = response.data.message; // Supongo que la respuesta contiene una propiedad "message"
       form.resetFields(); // Esto restablecerá los campos del formulario

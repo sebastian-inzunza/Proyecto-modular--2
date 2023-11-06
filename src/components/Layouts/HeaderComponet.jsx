@@ -72,7 +72,7 @@ const App = () => {
 
   const handleLogout = () => {
     axios
-      .get("http://localhost:8081/logout")
+      .get("https://server-modular-production.up.railway.app/logout")
       .then((res) => {
         console.log(res);
         if (res.data.Status === "Success") {
@@ -91,7 +91,7 @@ const App = () => {
 
   const getPayMethod = (id) => {
     axios
-      .get("http://localhost:8081/credits?id=" + id)
+      .get("https://server-modular-production.up.railway.app/credits?id=" + id)
       .then((res) => {
         if (res.status === 200) {
           setCredit(res.data.balance);
@@ -170,7 +170,7 @@ const App = () => {
 
       console.log(data);
       axios
-        .put("http://localhost:8081/actualizarMetodoPago", data)
+        .put("https://server-modular-production.up.railway.app/actualizarMetodoPago", data)
         //  .post("https://server-modular-production.up.railway.app/login", values)
         .then((res) => {
           console.log(res);
