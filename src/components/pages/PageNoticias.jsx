@@ -1,14 +1,6 @@
 import React from 'react'
 import Header from '../Header'
-import Fondo from "../../asset/fondo/leones.png";
-import Facebook from "../../asset/redes/facebook.png";
-import Instagram from "../../asset/redes/instagram.png";
-import Twitter from "../../asset/redes/twitter.png";
-import Youtube from "../../asset/redes/youtube.png";
-import Tiktok from "../../asset/redes/tiktok.png";
-import Udeg from "../../asset/universidad/udeg.png";
-import Cucei from "../../asset/universidad/cucei.png";
-import Leonesnegros from "../../asset/universidad/leonesnegros.png";
+
 import Footer from '../Footer';
 
 
