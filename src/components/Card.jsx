@@ -50,7 +50,7 @@ function Card({ text, title, deportes, button }) {
         dateExpire: dateExpire,
       };
       axios
-        .post("https://server-modular-production.up.railway.app/updateCBalance", data)
+        // .post("https://server-modular-production.up.railway.app/updateCBalance", data)
         .then((response) => {
           // Maneja la respuesta del servidor (si es necesario)
           console.log("Respuesta del servidor:", response.data);

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Modal, Button, InputNumber, Form } from "antd";
 import calavera from "../../../asset/calavera.webp";
 import calavera2 from "../../../asset/calavera2.webp";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 
 
@@ -13,14 +15,97 @@ function ModalComponent({
   momio,
   eventos,
   nombreEvento,
+  iddUser,
+  eventId
 })
  {
   const [form] = Form.useForm();
+
+  const [id, setId] = useState('')
+  const [credit, setCredit] = useState();
+
 
   const handleCancel = () => {
     form.resetFields(); // Esto restablecerá los campos del formulario
     onCancel();
   }
+
+  const getCookieValue = (cookieName) => {
+    const cookies = document.cookie.split("; ");
+    for (const cookie of cookies) {
+      const [name, value] = cookie.split("=");
+      if (name === cookieName) {
+        return decodeURIComponent(value);
+      }
+    }
+    return null;
+  };
+
+  const getPayMethod = (id) => {
+    axios
+      .get("http://localhost:8081/credits?id=" + id)
+      .then((res) => {
+        if (res.status === 200) {
+          setCredit(res.data.balance);
+        } else {
+          console.log("algo salio mal");
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const onfinish = (values) => {
+    console.log(values);
+    console.log(id);
+    console.log(eventId);
+    console.log(equipoSeleccionado);
+
+    const data = {
+      userId: id,
+      eventId: eventId,
+      amount: values.monto,
+      outcome: equipoSeleccionado,
+      saldo: credit
+    };
+    axios
+    .post("http://localhost:8081/insertApuesta", data)
+    .then((response) => {
+      const message = response.data.message; // Supongo que la respuesta contiene una propiedad "message"
+      form.resetFields(); // Esto restablecerá los campos del formulario
+    onCancel();
+    console.log(response)
+    Swal.fire({
+      icon: 'success',
+      title: 'Éxito',
+      text: message,
+      showCancelButton: false, // Oculta el botón Cancelar
+      confirmButtonText: 'Aceptar', // Etiqueta del botón Aceptar
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Recarga la página después de hacer clic en Aceptar
+        location.reload();
+      }
+    });
+    })
+    .catch((error) => {
+      console.error(error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Hubo un error en la solicitud.',
+      });
+    });
+  }
+  
+
+
+  useEffect(() => {
+    const id = getCookieValue("id");
+    getPayMethod(id)
+   
+    setId(id);
+  }, [credit]);
+
 
   return (
 
@@ -55,7 +140,7 @@ function ModalComponent({
 
       </div>
       <div className="mt-3">
-        <Form name="miFormulario" form={form}>
+        <Form name="miFormulario" form={form} onFinish={onfinish}>
           <Form.Item
             label="Ingresa el monto a apostar"
             name="monto"

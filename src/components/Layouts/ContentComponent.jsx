@@ -4,6 +4,20 @@ import Tablecomponent from "./TablesSport/Tablecomponent";
 const { Header, Content, Footer, Sider } = Layout;
 
 const ContentComponent = ({ selectedMenuItem }) => {
+
+  function limpiarYConvertirAMinusculas(cadena) {
+    // Normaliza la cadena para tratar los acentos
+    const cadenaNormalizada = cadena.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  
+    // Utiliza una expresión regular para eliminar todos los caracteres que no sean letras o números
+    const cadenaLimpia = cadenaNormalizada.replace(/[^a-zA-Z0-9]/g, '');
+  
+    // Convierte la cadena a minúsculas
+    return cadenaLimpia.toLowerCase();
+  }
+
+  const tipo = limpiarYConvertirAMinusculas(selectedMenuItem)
+
   return (
     <Content
       style={{
@@ -31,7 +45,7 @@ const ContentComponent = ({ selectedMenuItem }) => {
           background: "white",
         }}
       >
-        <Tablecomponent />
+        <Tablecomponent tipo={tipo} titulo={selectedMenuItem} />
       </div>
     </Content>
   );

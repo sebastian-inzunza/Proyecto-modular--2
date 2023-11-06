@@ -66,7 +66,7 @@ function Futbol() {
   // }, [])
 
   useEffect(() => {
-    const socket = io("https://server-modular-production.up.railway.app");
+    // const socket = io("https://server-modular-production.up.railway.app");
 
     // Escuchar el evento "datos_actualizados" para obtener datos actualizados
     socket.on("datos_actualizados", (resultados) => {
@@ -81,7 +81,7 @@ function Futbol() {
   // Función para cargar los datos desde el servidor
   const cargarDatos = async () => {
     try {
-      const response = await fetch("https://server-modular-production.up.railway.app/seleccionar-datos");
+      // const response = await fetch("https://server-modular-production.up.railway.app/seleccionar-datos");
       const data = await response.json();
       setEventos(data);
     } catch (error) {

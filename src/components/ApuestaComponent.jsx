@@ -19,7 +19,7 @@ function ApuestaComponent({ informacionRecibida }) {
       }
 
       axios
-  .post("https://server-modular-production.up.railway.app/insertApuesta", data)
+  // .post("https://server-modular-production.up.railway.app/insertApuesta", data)
   .then((response) => {
     Swal.fire({
       title: "Evento registrado",

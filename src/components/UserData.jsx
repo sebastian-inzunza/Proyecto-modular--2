@@ -26,7 +26,7 @@ function UserData(props) {
     }
     // Realiza una solicitud GET al servidor para obtener el saldo del usuario
     axios
-      .post(`https://server-modular-production.up.railway.app/saldoUsuario`, data)
+      // .post(`https://server-modular-production.up.railway.app/saldoUsuario`, data)
       .then((response) => {
         const saldoUsuario = response.data.saldo;
         setSaldo(saldoUsuario);
@@ -44,7 +44,7 @@ function UserData(props) {
     };
 
     axios
-      .post("https://server-modular-production.up.railway.app/addFondos", data)
+      // .post("https://server-modular-production.up.railway.app/addFondos", data)
       .then((response) => {
         // Maneja la respuesta del servidor (si es necesario
 
@@ -68,7 +68,7 @@ function UserData(props) {
 
     console.log(data);
     axios
-      .post("https://server-modular-production.up.railway.app/metodoPago", data)
+      // .post("https://server-modular-production.up.railway.app/metodoPago", data)
       .then((response) => {
         // Maneja la respuesta del servidor (si es necesario)
         console.log("Respuesta del servidor:", response.data.metodo);
@@ -100,7 +100,7 @@ function UserData(props) {
         dateExpire: dateExpire,
       };
       axios
-        .post("https://server-modular-production.up.railway.app/updateCBalance", data)
+        // .post("https://server-modular-production.up.railway.app/updateCBalance", data)
         .then((response) => {
           // Maneja la respuesta del servidor (si es necesario)
           console.log("Respuesta del servidor:", response.data);
@@ -147,7 +147,7 @@ function UserData(props) {
   };
   const handleLogout = () => {
     axios
-      .get("https://server-modular-production.up.railway.app/logout")
+      // .get("https://server-modular-production.up.railway.app/logout")
       .then((res) => {
         console.log(res);
         if (res.data.Status === "Success") {

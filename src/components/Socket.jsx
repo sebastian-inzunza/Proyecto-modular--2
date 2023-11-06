@@ -20,7 +20,7 @@ function Socket() {
   // Función para cargar los datos desde el servidor
   const cargarDatos = async () => {
     try {
-      const response = await fetch("https://server-modular-production.up.railway.app/seleccionar-datos");
+      // const response = await fetch("https://server-modular-production.up.railway.app/seleccionar-datos");
       const data = await response.json();
       setDatos(data);
     } catch (error) {
