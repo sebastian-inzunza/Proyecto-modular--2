@@ -214,7 +214,7 @@ const App = ({tipo, titulo}) => {
           <div className="lg:block hidden">
             <Table
               bordered
-              columns={columns}
+              columns={columns ? columns : []}
               dataSource={eventos}
               size="middle"
             />
@@ -231,7 +231,7 @@ const App = ({tipo, titulo}) => {
     
               <Table
                 bordered
-                columns={columnnMobile}
+                columns={columnnMobile ? columnnMobile : []}
                 dataSource={eventos}
                 className="mx-3 mt-3"
                 size="small"
