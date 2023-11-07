@@ -35,7 +35,7 @@ const App = ({tipo, titulo}) => {
   // Función para cargar los datos desde el servidor
   const cargarDatos = async (tipo) => {
     try {
-      const response = await fetch("https://server-modular-production.up.railway.app/seleccionar-datos?tipo="+tipo);
+      const response = await fetch("https://server-modular-production.up.railway.app/seleccionar-datos/"+tipo);
       //  const response = await fetch("https://server-modular-production.up.railway.app/seleccionar-datos");
 
       const data = await response.json();
