@@ -138,8 +138,21 @@ const App = () => {
       key: "2",
     },
   ];
+
+  const items2 = [
+    {
+      label: "Apuestas",
+      key: "1",
+    },
+   
+  ];
   const menuProps = {
     items,
+    onClick: handleMenuClick,
+  };
+
+  const menuProps2 = {
+    items2,
     onClick: handleMenuClick,
   };
 
@@ -233,6 +246,10 @@ const App = () => {
               </div>
             </div>
             <Dropdown menu={menuProps}>
+              <Button className="bg-white" icon={<UserOutlined />}></Button>
+            </Dropdown>
+
+            <Dropdown menu={menuProps2}>
               <Button className="bg-white" icon={<UserOutlined />}></Button>
             </Dropdown>
           </div>
