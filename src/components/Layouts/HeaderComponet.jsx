@@ -249,9 +249,9 @@ const App = () => {
               <Button className="bg-white" icon={<UserOutlined />}></Button>
             </Dropdown>
 
-            <Dropdown menu={menuProps2}>
+            {/* <Dropdown menu={menuProps2}>
               <Button className="bg-white" icon={<UserOutlined />}></Button>
-            </Dropdown>
+            </Dropdown> */}
           </div>
         </Header>
         <ContentComponent selectedMenuItem={selectedMenuItem} />
